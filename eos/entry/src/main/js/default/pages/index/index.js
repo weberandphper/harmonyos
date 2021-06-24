@@ -1,5 +1,6 @@
 // index.js
 import fetch from '@system.fetch';
+import router from '@system.router';
 
 export default {
     data: {
@@ -37,6 +38,18 @@ export default {
         setInterval(() => {
             this.currentData = getTime()
         }, 1000)
+    },
+
+    toDetail () {
+        router.push({
+            uri: 'pages/detail/index',
+            params: {
+                data1: 'message',
+                data2: {
+                    data3: [123, 456, 789]
+                },
+            },
+        });
     },
 
     // 获取数字货币价格

@@ -1,18 +1,17 @@
-/* index.css */
+/* xxx.css */
 .container {
-    width: 454px;
-    height: 454px;  
-    background-color: red;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-.title {
-    background-color: silver;
-    height: 100px;
-    
+.chart-region {
+    height: 400px;
+    width: 700px;
 }
-
-.content {
-    background-color: yellow;
+.chart-background {
+    object-fit: fill;
 }
-
+.chart-data {
+    width: 700px;
+    height: 600px;
+}

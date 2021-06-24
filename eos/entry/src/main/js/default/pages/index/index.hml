@@ -10,7 +10,7 @@
     </div>
     <div class="currency-content">
         <list class="currency-list">
-            <list-item for="{{currencyList}}" class="list-item">
+            <list-item for="{{currencyList}}" class="list-item" @click="toDetail">
                 <image src="{{$item.img}}" class="dot"></image>
                 <text class="item-name">{{$item.name}}</text>
                 <text class="item-price">￥{{$item.price}}</text>
