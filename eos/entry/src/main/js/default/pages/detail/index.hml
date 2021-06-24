@@ -1,0 +1,12 @@
+<!-- index.hml -->
+<div class="container">
+    <text>
+        <span>数字货币列表</span>
+    </text>
+    <list class="todo-wraper">
+        <list-item for="{{todolist}}" class="todo-item">
+            <text class="todo-title">{{$item.title}}</text>
+            <text class="todo-title">{{$item.date}}</text>
+        </list-item>
+    </list>
+</div>

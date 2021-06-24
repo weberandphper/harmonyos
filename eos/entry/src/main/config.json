@@ -9,6 +9,11 @@
   },
   "deviceConfig": {},
   "module": {
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ],
     "package": "com.example.myapplication",
     "name": ".MyApplication",
     "mainAbility": "com.example.myapplication.MainAbility",
@@ -46,12 +51,13 @@
     "js": [
       {
         "pages": [
-          "pages/index/index"
+          "pages/index/index",
+          "pages/detail/index"
         ],
         "name": "default",
         "window": {
-          "designWidth": 720,
-          "autoDesignWidth": true
+          "designWidth": 466,
+          "autoDesignWidth": false
         }
       }
     ]

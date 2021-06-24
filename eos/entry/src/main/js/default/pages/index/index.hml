@@ -1,5 +1,22 @@
+<!-- index.hml -->
 <div class="container">
-    <text class="title">
-        {{ $t('strings.hello') }} {{ title }}
-    </text>
+    <div class="page-header" @click="getCurrencyData()">
+        <text class="title">
+            Gate.io
+        </text>
+        <text class="time">
+            {{currentData}}
+        </text>
+    </div>
+    <div class="currency-content">
+        <list class="currency-list">
+            <list-item for="{{currencyList}}" class="list-item">
+                <image src="{{$item.img}}" class="dot"></image>
+                <text class="item-name">{{$item.name}}</text>
+                <text class="item-price">￥{{$item.price}}</text>
+                <text class="item-rate up" if="{{$item.rate > 0}}">{{$item.rate}}%</text>
+                <text class="item-rate down" else>{{$item.rate}}%</text>
+            </list-item>
+        </list>
+    </div>
 </div>

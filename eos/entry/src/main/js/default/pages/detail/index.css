@@ -1,0 +1,18 @@
+/* index.css */
+.container {
+    width: 454px;
+    height: 454px;  
+    background-color: red;
+
+}
+
+.title {
+    background-color: silver;
+    height: 100px;
+    
+}
+
+.content {
+    background-color: yellow;
+}
+
