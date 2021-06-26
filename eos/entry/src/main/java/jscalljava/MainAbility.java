@@ -13,29 +13,24 @@
  * limitations under the License.
  */
 
-.divAli {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-.button-controller {
-    align-items: center;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+package jscalljava;
 
-.btn3 {
-    width: 70%;
-    height: 80px;
-    font-size: 30px;
-    background-color: #1976D2;
-    text-color: white;
+import ohos.aafwk.content.Intent;
+import ohos.ace.ability.AceAbility;
+
+/**
+ * MainAbility AceAbility
+ */
+public class MainAbility extends AceAbility {
+    @Override
+    public void onStart(Intent intent) {
+        super.onStart(intent);
+        BatteryInternalAbility.getInstance().register();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        BatteryInternalAbility.getInstance().deregister();
+    }
 }

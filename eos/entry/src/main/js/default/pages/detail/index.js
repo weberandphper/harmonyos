@@ -45,7 +45,8 @@ export default {
                 }
             }
         },
-        urlParams: {}
+        urlParams: {},
+        weeksData: []
     },
     addData() {
         this.$refs.linechart.append({
@@ -60,6 +61,7 @@ export default {
 
     handlingData (val) {
         if (!this.urlParams.kline) return
+        this.weeksData = this.urlParams.kline
         this.lineData.data = []
         this.urlParams.kline.forEach((item) => {
             this.lineData[0].data.push(item.close)

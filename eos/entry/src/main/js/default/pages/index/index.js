@@ -76,4 +76,13 @@ export default {
         });
     },
 
+    toTest () {
+        router.push({
+            uri: 'pages/webview/index',
+            params: {
+
+            }
+        });
+    }
+
 }
