@@ -11,6 +11,32 @@ export default {
         this.getCurrencyData()
         this.getCurrentTime()
     },
+
+    // 获取数字货币价格 （https://www.mytokencap.com/）
+    getCurrencyData () {
+        fetch.fetch({
+            url: "https://api.mytokenapi.com/ticker/currencylist?subject=market_cap&page=1&size=100&timestamp=1624551776753&code=c46af242ced71ae5cb8bcbdf0cbac0ae&platform=web_pc&v=1.0.0&language=zh_CN&legal_currency=CNY",
+            success: (response) => {
+                response = JSON.parse(response.data)
+                let currencyList = []
+                response.data.list.forEach((item, index) => {
+                    currencyList.push({
+                        img: item.logo,
+                        name: item.pair,
+                        price: item.price_display_cny,
+                        rate: item.percent_change_utc0,
+                        allData: item
+                    })
+                })
+                this.currencyList = currencyList
+            },
+            fail: (e) => {
+                console.info("fetch fail");
+            }
+        });
+    },
+
+    // 获取当前时间
     getCurrentTime () {
         function fillZero(str) {
             var realNum;
@@ -40,41 +66,14 @@ export default {
         }, 1000)
     },
 
-    toDetail () {
+    // 跳转货币详情
+    toDetail (item) {
         router.push({
             uri: 'pages/detail/index',
             params: {
-                data1: 'message',
-                data2: {
-                    data3: [123, 456, 789]
-                },
+                urlParams: item.allData
             },
         });
     },
-
-    // 获取数字货币价格
-    getCurrencyData () {
-        fetch.fetch({
-            url: "https://api.mytokenapi.com/ticker/currencylist?subject=market_cap&page=1&size=5&timestamp=1624551776753&code=c46af242ced71ae5cb8bcbdf0cbac0ae&platform=web_pc&v=1.0.0&language=zh_CN&legal_currency=CNY",
-            success: (response) => {
-                response = JSON.parse(response.data)
-                console.info("fetch success");
-                console.info("response.data");
-                let currencyList = []
-                response.data.list.forEach((item, index) => {
-                    currencyList.push({
-                        img: item.logo,
-                        name: item.pair,
-                        price: item.price_display_cny,
-                        rate: item.percent_change_utc0
-                    })
-                })
-                this.currencyList = currencyList
-            },
-            fail: (e) => {
-                console.info("fetch fail");
-            }
-        });
-    }
 
 }

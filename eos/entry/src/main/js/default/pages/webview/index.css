@@ -1,10 +1,26 @@
-/* xxx.css */
+/*xxx.css */
 .container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: red;
 }
 
+.form {
+    width: 360px;
+    height: 360px;
+    flex-direction: column;
+/*    background-color: red;*/
+    margin-top: 64px;
+}
+
+.row {
+    margin-bottom: 22px;
+}
+
+.label {
+    width: 100px;
+}
 
 .title {
     width: 100%;
@@ -16,13 +32,6 @@
     font-size: 22px;
 }
 
-
-.chart-region {
-    height: 330px;
-    width: 330px;
-    background-color: red;
-}
-
 button {
     width: 100%;
     position: fixed;
@@ -32,19 +41,3 @@ button {
     text-align: center;
     font-size: 22px;
 }
-
-
-
-
-
-
-
-
-/*button {*/
-/*    position: absolute;*/
-/*    bottom: 0;*/
-/*    width: 100%;*/
-/*    background-color: yellow;*/
-/*!*    color: red;*!*/
-/*}*/
-

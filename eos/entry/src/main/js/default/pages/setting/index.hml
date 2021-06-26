@@ -1,0 +1,21 @@
+<!--xxx.hml -->
+<div class="container">
+    <text class="title">
+        价格设置
+    </text>
+    <div class="form">
+        <div class="row">
+            <label class="label" target="textId">价格</label>
+            <input class="input" id="textId" type="text"></input>
+        </div>
+        <div class="row">
+            <label class="label" target="textId">金额</label>
+            <input class="input" id="textId" type="text"></input>
+        </div>
+        <div class="row">
+            <label class="label" target="checkboxId">时间</label>
+            <input class="input" id="checkboxId" type="checkbox"></input>
+        </div>
+    </div>
+    <button value="提交" onclick="enterkeyClick"></button>
+</div>

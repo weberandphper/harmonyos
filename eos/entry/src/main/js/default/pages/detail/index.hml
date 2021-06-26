@@ -1,8 +1,10 @@
 <!-- xxx.hml -->
 <div class="container">
+    <text class="title">
+        {{urlParams.name || 'EOS'}} 7D价格趋势
+    </text>
     <stack class="chart-region">
-        <image class="chart-background" src="common/background.png"></image>
         <chart class="chart-data" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}"></chart>
     </stack>
-    <button value="Add data" onclick="addData"></button>
+    <button value="设置价格" onclick="toSetPrice"></button>
 </div>

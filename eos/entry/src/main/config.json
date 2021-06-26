@@ -12,6 +12,9 @@
     "reqPermissions": [
       {
         "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.GET_BUNDLE_INFO"
       }
     ],
     "package": "com.example.myapplication",
@@ -52,7 +55,9 @@
       {
         "pages": [
           "pages/index/index",
-          "pages/detail/index"
+          "pages/detail/index",
+          "pages/setting/index",
+          "pages/webview/index"
         ],
         "name": "default",
         "window": {
