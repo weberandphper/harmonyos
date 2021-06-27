@@ -1,26 +1,19 @@
 <!-- xxx.hml -->
 <div class="container">
-    <text class="title">
-        {{urlParams.name || 'EOS'}} 7D价格趋势
+    <text class="title"  onclick="toSetPrice">
+        {{urlParams.name || ''}}7D价格趋势
     </text>
     <stack class="chart-region">
         <chart class="chart-data" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}"></chart>
     </stack>
-    <div class="currency-content">
-        <list class="currency-list">
-            <list-item for="{{weeksData}}" class="list-item" @click="toDetail({{$item}})">
-            <!--                <image src="{{$item.img}}" class="dot"></image>-->
-            <!--                <text class="item-name">{{$item.name}}</text>-->
-                <text class="item-price">￥{{$item.close}}</text>
-                <text class="item-price">{{new Date($item.time)}}</text>
-                <text class="item-price">{{$item.volumefrom}}</text>
-            <!--                <text class="item-rate up" if="{{$item.rate > 0}}">{{$item.rate}}%</text>-->
-<!--                <text class="item-rate down" else>{{$item.rate}}%</text>-->
-            </list-item>
-        </list>
-    </div>
-    <button value="设置价格" onclick="toSetPrice"></button>
-<!--    <button value="设置价格" onclick="toSetPrice"></button>-->
-<!--    <button value="设置价格" onclick="toSetPrice"></button>-->
-<!--    <button value="设置价格" onclick="toSetPrice"></button>-->
+<!--    <div class="currency-content">-->
+<!--        <list class="currency-list">-->
+<!--            <list-item for="{{weeksData}}" class="list-item" @click="toDetail({{$item}})">-->
+<!--                <text class="item-price">￥{{$item.close}}</text>-->
+<!--                <text class="item-price">{{new Date($item.time)}}</text>-->
+<!--                <text class="item-price">{{$item.volumefrom}}</text>-->
+<!--            </list-item>-->
+<!--        </list>-->
+
+    <button value="{{ revenue || '设置价格' }}" onclick="toSetPrice"></button>
 </div>

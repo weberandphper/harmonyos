@@ -1,52 +1,101 @@
 // xxx.js
 import prompt from '@system.prompt'
 import notification from '@system.notification';
-import device from '@system.device';
-import pkg from '@system.package';
-
+import storage from '@system.storage';
 export default {
+    data: {
+        urlParams: {},
+        payAmount: '',
+        eachPrice: '',
+        num: ''
+    },
     onInit() {
-
-
-
-        this.enterkeyClick()
     },
     change(e){
         prompt.showToast({
             message: "value: " + e.value,
             duration: 3000,
         });
-
-
     },
-    enterkeyClick(e){
-//        prompt.showToast({
-//            message: "enterkey clicked",
-//            duration: 3000,
+    enterkeyClick(){
+
+        console.log('543543'+ this.payAmount)
+
+        let that = this
+        storage.set({
+            key: 'payAmount',
+            value: this.payAmount,
+            success: function() {
+                console.info('call storage.set success.');
+
+                storage.set({
+                    key: 'eachPrice',
+                    value: this.eachPrice,
+                    success: function() {
+                        console.info('call storage.set success.');
+
+                        console.log('24324'+that.payAmount)
+                        console.log('24324'+that.eachPrice)
+                        console.log('243241'+that.urlParams.price_cny)
+
+                        prompt.showToast({
+                            message: "设置成功",
+                            duration: 3000,
+                        });
+
+
+
+                    },
+                    fail: function(data, code) {
+                        console.info('call storage.set fail, code: ' + code + ', data: ' + data);
+                    },
+                })
+
+            },
+            fail: function(data, code) {
+                console.info('call storage.set fail, code: ' + code + ', data: ' + data);
+            },
+        })
+
+
+
+
+
+
+//        storage.get({
+//            key: 'payAmount',
+//            success: function (payAmount) {
+//                console.log('call storage.get success1: ' + payAmount);
+//                storage.get({
+//                    key: 'eachPrice',
+//                    success: function (eachPrice) {
+//                        console.log('call storage.get success: ' + eachPrice);
+//                        return payAmount / eachPrice * this.urlParams.price_cny
+//                    },
+//                });
+//            }
 //        });
 
-        pkg.hasInstalled({
-            bundleName: 'com.example.bundlename',
-            success: function(data) {
-                console.log('package has installed: ' + data);
-            },
-            fail: function(data, code) {
-                console.log('query package fail, code: ' + code + ', data: ' + data);
-            },
-        });
 
-
-        device.getInfo({
-            success: function(data) {
-                console.log('Device information obtained successfully. Device brand:' + data.brand);
-            },
-            fail: function(data, code) {
-                console.log('Failed to obtain device information. Error code:'+ code + '; Error information: ' + data);
-            },
-        });
-
-
-
+//        pkg.hasInstalled({
+//            bundleName: 'com.example.bundlename',
+//            success: function(data) {
+//                console.log('package has installed: ' + data);
+//            },
+//            fail: function(data, code) {
+//                console.log('query package fail, code: ' + code + ', data: ' + data);
+//            },
+//        });
+//
+//
+//        device.getInfo({
+//            success: function(data) {
+//                console.log('Device information obtained successfully. Device brand:' + data.brand);
+//            },
+//            fail: function(data, code) {
+//                console.log('Failed to obtain device information. Error code:'+ code + '; Error information: ' + data);
+//            },
+//        });
 
         notification.show({
             contentTitle: 'title info',

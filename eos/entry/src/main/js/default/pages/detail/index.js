@@ -1,5 +1,6 @@
 // xxx.js
 import router from '@system.router';
+import storage from '@system.storage';
 
 export default {
     data: {
@@ -46,7 +47,8 @@ export default {
             }
         },
         urlParams: {},
-        weeksData: []
+        weeksData: [],
+        revenue: ''
     },
     addData() {
         this.$refs.linechart.append({
@@ -57,8 +59,25 @@ export default {
     onInit() {
         console.info('urlParams:' + this.urlParams);
         this.handlingData()
+        this.getRevenue()
     },
+    getRevenue () {
+        storage.get({
+            key: 'payAmount',
+            success: (payAmount) => {
+                console.log('call storage.get success1: ' + payAmount);
+                storage.get({
+                    key: 'eachPrice',
+                    success: (eachPrice) => {
+                        console.log('call storage.get success: ' + eachPrice);
+                        console.log('fdsfd' + payAmount / eachPrice * this.urlParams.price_cny)
+                        this.revenue = payAmount / eachPrice * this.urlParams.price_cny
+                    }
+                });
+            },
+        });
 
+    },
     handlingData (val) {
         if (!this.urlParams.kline) return
         this.weeksData = this.urlParams.kline
@@ -73,7 +92,7 @@ export default {
         router.push({
             uri: 'pages/setting/index',
             params: {
-
+                urlParams: this.urlParams
             },
         });
 
