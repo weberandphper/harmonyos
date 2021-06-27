@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.example.myapplication",
+    "bundleName": "com.example.myapplication1666",
     "vendor": "example",
     "version": {
       "code": 1000000,
@@ -17,8 +17,9 @@
         "name": "ohos.permission.GET_BUNDLE_INFO"
       }
     ],
-    "package": "jscalljava",
-    "name": ".jscalljava",
+    "package": "com.example.myapplication",
+    "name": ".MyApplication",
+    "mainAbility": "com.example.myapplication.MainAbility",
     "deviceType": [
       "phone",
       "tablet",
