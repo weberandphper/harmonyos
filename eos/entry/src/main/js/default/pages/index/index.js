@@ -15,7 +15,7 @@ export default {
     // 获取数字货币价格 （https://www.mytokencap.com/）
     getCurrencyData () {
         fetch.fetch({
-            url: "https://api.mytokenapi.com/ticker/currencylist?subject=market_cap&page=1&size=100&timestamp=1624551776753&code=c46af242ced71ae5cb8bcbdf0cbac0ae&platform=web_pc&v=1.0.0&language=zh_CN&legal_currency=CNY",
+            url: "https://api.mytokenapi.com/ticker/currencylist?subject=market_cap&page=1&size=30&timestamp=1624551776753&code=c46af242ced71ae5cb8bcbdf0cbac0ae&platform=web_pc&v=1.0.0&language=zh_CN&legal_currency=CNY",
             success: (response) => {
 
                 console.info("responsresponsee");

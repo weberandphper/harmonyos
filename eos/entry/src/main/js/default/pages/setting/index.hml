@@ -6,11 +6,11 @@
     <div class="form">
         <div class="row">
             <label class="label" target="textId">单格</label>
-            <input class="input" id="textId" value="{{eachPrice}}"  type="text"></input>
+            <input class="input" id="textId" value="{{eachPrice}}" @change="changeEachPrice"  type="text"></input>
         </div>
         <div class="row">
             <label class="label" target="textId">金额</label>
-            <input class="input" id="textId" value="{{payAmount}}" type="text"></input>
+            <input class="input" id="textId" value="{{payAmount}}" @change="changePayAmount"  type="text"></input>
         </div>
     </div>
     <button value="提交" onclick="enterkeyClick"></button>

@@ -24,7 +24,7 @@ export default {
             },
             yAxis: {
                 min: 0,
-                max: 294426,
+                max: 30,
                 display: false,
             },
             series: {
@@ -57,9 +57,13 @@ export default {
         })
     },
     onInit() {
-        console.info('urlParams:' + this.urlParams);
         this.handlingData()
-        this.getRevenue()
+    },
+    onShow() {
+        let buyData = this.$app.$def.globalData.buyData
+        if (buyData.coinName != this.urlParams.name) return
+        this.revenue = buyData.payAmount / buyData.eachPrice * this.urlParams.price_cny
+        return
     },
     getRevenue () {
         storage.get({

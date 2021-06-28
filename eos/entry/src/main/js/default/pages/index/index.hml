@@ -1,6 +1,6 @@
 <!-- index.hml -->
 <div class="container">
-    <div class="page-header" @click="toTest()">
+    <div class="page-header" @click="getCurrencyData()">
         <text class="title">
             Gate.io
         </text>

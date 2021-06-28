@@ -17,10 +17,23 @@ export default {
             duration: 3000,
         });
     },
+    changePayAmount (e) {
+        this.payAmount = e.value
+    },
+
+    changeEachPrice (e) {
+        this.eachPrice = e.value
+    },
     enterkeyClick(){
-
-        console.log('543543'+ this.payAmount)
-
+        this.$app.$def.globalData.buyData.payAmount = this.payAmount
+        this.$app.$def.globalData.buyData.eachPrice = this.eachPrice
+        this.$app.$def.globalData.buyData.coinName = this.urlParams.name
+        this.$app.$def.globalData.buyData.coinData = this.urlParams
+        prompt.showToast({
+            message: "设置成功",
+            duration: 3000,
+        });
+        return
         let that = this
         storage.set({
             key: 'payAmount',
@@ -56,10 +69,6 @@ export default {
                 console.info('call storage.set fail, code: ' + code + ', data: ' + data);
             },
         })
-
-
-
-
 
 
 //        storage.get({
