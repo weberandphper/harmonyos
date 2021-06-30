@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "com.example.myapplication1666",
-    "vendor": "example",
+    "bundleName": "com.example.myapplication16666",
+    "vendor": "1.0.0",
     "version": {
       "code": 1000000,
       "name": "1.0.0"

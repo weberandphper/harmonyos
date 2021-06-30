@@ -6,12 +6,21 @@ ohos {
     signingConfigs {
         debug {
             storeFile file('C:\\Users\\Administrator\\.ohos\\config\\auto_debug_2850086000489956268.p12')
-            storePassword '000000186E91FFED85FD33E22A13E9D5572EA2E7C617495C0D3E12E9458D14123A39623D96B87181'
+            storePassword '00000018DFF2EC74868FC1124E1791C785F22B34AE5CA7E3A6D5CF7E7A20766B998A8CF594311FB1'
             keyAlias = 'debugKey'
-            keyPassword '000000184927F453CEA53D82C13F02937AF2E0E6A9E0BBA4EA4C3C8A66494676EC9AF2E9D262554A'
+            keyPassword '000000185D80C3A7363669621C310BA956BF7D3C35A87814F1B7770A467E495A706EF37E71050D0D'
             signAlg = 'SHA256withECDSA'
-            profile file('C:\\Users\\Administrator\\.ohos\\config\\auto_debug_myapplication1666_2850086000489956268.p7b')
+            profile file('C:\\Users\\Administrator\\.ohos\\config\\auto_debug_myapplication16666_2850086000489956268.p7b')
             certpath file('C:\\Users\\Administrator\\.ohos\\config\\auto_debug_2850086000489956268.cer')
+        }
+        release {
+            storeFile file('C:\\Users\\Administrator\\Desktop\\gate\\gate.p12')
+            storePassword '0000001A5872A393ABB3068CB04A7433D6BF54DBFE22ECF637EE9EAA62E893CD1B6F9178307E1214D7FF'
+            keyAlias = 'cfwroot123'
+            keyPassword '0000001A1C1EFAF8CF6C7937AEFA692B07984D6B519CC37DB7B5BE66AA080CB5CC0C5F73BC40583E2C83'
+            signAlg = 'SHA256withECDSA'
+            profile file('C:\\Users\\Administrator\\Desktop\\gate\\gateRelease.p7b')
+            certpath file('C:\\Users\\Administrator\\Desktop\\gate\\gate.cer')
         }
     }
     compileSdkVersion 5
