@@ -33,7 +33,7 @@ export default {
             message: "设置成功",
             duration: 3000,
         });
-        return
+//        return
         let that = this
         storage.set({
             key: 'payAmount',

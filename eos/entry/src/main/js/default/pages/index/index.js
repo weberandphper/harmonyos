@@ -1,6 +1,9 @@
 // index.js
 import fetch from '@system.fetch';
 import router from '@system.router';
+import prompt from '@system.prompt';
+import notification from '@system.notification';
+import vibrator from '@system.vibrator';
 
 export default {
     data: {
@@ -10,6 +13,10 @@ export default {
     onInit() {
         this.getCurrencyData()
         this.getCurrentTime()
+
+//        setInterval(() => {
+//            this.getCurrencyData()
+//        } , 5000)
     },
 
     // 获取数字货币价格 （https://www.mytokencap.com/）
@@ -18,9 +25,26 @@ export default {
             url: "https://api.mytokenapi.com/ticker/currencylist?subject=market_cap&page=1&size=30&timestamp=1624551776753&code=c46af242ced71ae5cb8bcbdf0cbac0ae&platform=web_pc&v=1.0.0&language=zh_CN&legal_currency=CNY",
             success: (response) => {
 
-                console.info("responsresponsee");
+                prompt.showToast({
+                    message: "设置成功",
+                    duration: 3000,
+                });
 
+                vibrator.vibrate({
+                    mode: 'short',
+                });
+                console.info("responsresponsee");
                 response = JSON.parse(response.data)
+                notification.show({
+                    contentTitle: 'title info' + response.data.list.length,
+                    contentText: 'text',
+                    clickAction: {
+                        bundleName: 'com.huawei.testapp',
+                        abilityName: 'notificationDemo',
+                        uri: '/path/to/notification',
+                    },
+                });
+
                 let currencyList = []
                 response.data.list.forEach((item, index) => {
                     currencyList.push({
