@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "entry_DemoProviderAbility",
+      "value": "entry_DemoProviderAbility"
+    },
+    {
+      "name": "demoproviderability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "demoproviderability_HelloWorld",
+      "value": "Hello World"
+    }
+  ]
+}

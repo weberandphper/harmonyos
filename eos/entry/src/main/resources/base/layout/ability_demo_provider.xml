@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<complication-data>
+    <complication type="SIMPLE" template="icon_float_value">
+        <icon>$media:Media_icon</icon>
+        <number>1.2f</number>
+    </complication>
+    <complication type="SIMPLE" template="icon_title_string_value">
+        <icon>$media:Media_icon</icon>
+        <title>$string:ic_demo</title>
+        <text>A demo value</text>
+    </complication>
+</complication-data>

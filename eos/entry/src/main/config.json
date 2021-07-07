@@ -49,6 +49,40 @@
         "label": "$string:entry_MainAbility",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "name": ".DemoProviderAbility",
+        "icon": "$media:icon",
+        "label": "$string:entry_DemoProviderAbility",
+        "visible": true,
+        "permissions": [
+          "ohos.wearable.complication.permission.BIND_COMPLICATION_PROVIDER"
+        ],
+        "type": "service",
+        "skills": [
+          {
+            "actions": [
+              "ohos.wearable.complication.ACTION_REQUEST_UPDATE_COMPLICATION"
+            ],
+            "entities": []
+          }
+        ],
+        "metaData": {
+          "customizeData": [
+            {
+              "name": "ohos.wearable.complication.COMPLICATION_TYPES",
+              "value": "SIMPLE"
+            },
+            {
+              "name": "ohos.wearable.complication.UPDATE_PERIOD_SECONDS",
+              "value": "300"
+            },
+            {
+              "name": "ohos.wearable.complication.COMPLICATION_PREVIEW_DATA",
+              "extra": "$string:test"
+            }
+          ]
+        }
       }
     ],
     "js": [

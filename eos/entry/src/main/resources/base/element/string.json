@@ -11,6 +11,26 @@
     {
       "name": "serviceability_description",
       "value": "hap sample empty service"
+    },
+    {
+      "name": "demoproviderability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "demoproviderability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_DemoProviderAbility",
+      "value": "entry_DemoProviderAbility"
+    },
+    {
+      "name": "test",
+      "value": "entry_DemoProviderAbility"
+    },
+    {
+      "name": "ic_demo",
+      "value": "icon.png"
     }
   ]
 }
